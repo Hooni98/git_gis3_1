@@ -1,13 +1,20 @@
 def decorator(func):
-    def decorated(input_text):
-        print("함수 시작")
-        func(input_text)
-        print("함수 끝")
+    def decorated(height, weight):
+        if height < 0 or weight < 0:
+            print("Error!")
+        else:
+            func(height,weight)
     return decorated
 
-
 @decorator
-def hello_world(input_text):
-    print(input_text)
+def area_tri(height, weight):
+    tri_area = 0.5 * weight * height
+    print(tri_area)
+@decorator
+def area_square(height,weight):
+    square_area = height * weight
+    print(square_area)
 
-hello_world('Hello_world')
+
+area_tri(-4,-3)
+area_square(2,3)
