@@ -1,7 +1,4 @@
 
-
-
-
 urlpatterns = [
-    path
+
 ]
