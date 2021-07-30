@@ -74,6 +74,8 @@ class AccountDeleteView(DeleteView):
     success_url = reverse_lazy('accountapp:hello_world')
     template_name = 'accountapp/delete.html'
 
+    def get_success_url(self):
+        return reverse('accountapp:detail', kwargs={'pk':self.object.pk})
     # def get(self, request, *args, **kwargs):
     #     if request.user.is_authenticated and self.get_object() == request.user:
     #         return super().get(request, *args, **kwargs)
